@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+	<style type="text/css">
+		.holder	{ width:200px; float:left; }
+		#add,#remove	{ display:block; width:100px; border:1px solid #ccc; background:#eee; padding:10px; }
+		select	{ margin:0 0 10px 0; width:150px; font:12px tahoma; padding:5px; height:300px; }
+		option	{ padding:10px; }
+	</style>
+<script type="text/javascript" src="jquery.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+$('#add').click(function() { //  на событие клик вешаем функцию
+$('#select1 option:selected').each(function(el) { // у элемента #select1 собираем выбранные опции (option:selected) и на  каждую (each) из них вешанм ф-цию
+          			if ($('#select2 option').length < 4)
+					{
+					$(this).appendTo('#select2'); // внутрь #select2 вставляем выбранные ранее опции
+					}
+					else alert("Больше 4етырех нельзя").end();
+                                  				});
+
+			});
+
+$('#remove').click(function() { // ф-ция  live позволит нам в дальнейшем манипулировать перенесенными элементами, далее на событие клик вешаем функцию
+$('#select2 option:selected').each(function(el) { // у элемента #select1 собираем выбранные опции (option:selected) и на  каждую (each) из них вешанм ф-цию
+$(this).appendTo('#select1'); // внутрь #select2 вставляем выбранные ранее опции
+                        	});
+
+			});
+
+
+});
+	</script>
+</head>
+
+<body>
+
+<h1>Multi-Select Transfers</h1>
+<div class="holder">
+	<select multiple="multiple" id="select1" name="select1[]">
+		<option value="1">Option 1</option>
+		<option value="2">Option 2</option>
+		<option value="3">Option 3</option>
+		<option value="4">Option 4</option>
+  		<option value="5">Option 5</option>
+        <option value="6">Option 6</option>
+	</select>
+	<a href="#" id="add">добавить >></a>
+</div>
+<div class="holder">
+	<select multiple="multiple" id="select2">
+
+
+
+	</select>
+	<a href="#" id="remove"><< удалить </a>
+</div>
+
+</body>
+</html>

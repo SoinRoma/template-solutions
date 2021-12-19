@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="introjs.min.css">
+</head>
+<body>
+<div>
+    <h1 id="title">Hello</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet atque eum eveniet fugit quas qui sequi? Dolore
+        ipsum reprehenderit tempore temporibus. Exercitationem iste maiores nihil quidem voluptas. Aperiam asperiores
+        corporis ducimus enim eos error et impedit incidunt magnam numquam officia quae quo ratione sunt ullam, ut vitae
+        voluptate. A dolorem ea facere laborum maiores minima natus, necessitatibus nemo obcaecati odio pariatur quidem
+        sed veniam. Atque autem blanditiis cupiditate ex fugiat magni maiores non quia similique suscipit? Accusamus
+        alias aliquid assumenda atque beatae blanditiis corporis doloribus ducimus eaque eos excepturi harum nulla
+        perferendis qui quis repellendus, sequi sit vel vitae voluptatem?</p>
+    <button id="btn">Click</button>
+</div>
+
+<script src="intro.min.js"></script>
+<script>
+    introJs().setOptions({
+        steps: [{
+            intro: "Hello world!"
+        }, {
+            element: document.querySelector('#btn'),
+            intro: "Click here to login!"
+        }]
+    }).start();
+</script>
+
+
+</body>
+</html>
